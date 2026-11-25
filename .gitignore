@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.*
+!.env.example
+bench/datasets/raw/
+.DS_Store

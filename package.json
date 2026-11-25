@@ -1,0 +1,32 @@
+{
+  "name": "shadowmod",
+  "version": "0.1.0",
+  "description": "Shadow banning for Postgres apps: decision-model scores in an append-only log, one SQL view decides what is hidden.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "db:up": "docker compose up -d --wait",
+    "demo": "tsx examples/guestbook/server.ts",
+    "bench": "tsx bench/run.ts",
+    "bench:download": "tsx bench/datasets/download.ts",
+    "bench:synthetic": "tsx bench/datasets/make-synthetic.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@testcontainers/postgresql": "^12.2.2",
+    "@types/node": "^26.6.7",
+    "@types/pg": "^8.23.1",
+    "testcontainers": "^12.2.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}

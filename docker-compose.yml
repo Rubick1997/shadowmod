@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: shadowmod
+      POSTGRES_PASSWORD: shadowmod
+      POSTGRES_DB: shadowmod
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shadowmod"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
